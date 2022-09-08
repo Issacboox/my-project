@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+/* eslint-disable no-unused-vars */
+import logo from "./logo.svg";
+import "./App.css";
+import Header from "./components/Header";
+import Sidebar from "./components/Sidebar";
+import Content from "./components/Content";
+import Footer from "./components/Footer";
+import Report from "./components/Report";
+import dashboard from "./components/dashboard";
+import test from "./components/test";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Header />
+        <Sidebar />
+        <Switch>
+          <Route component={Content} path="/Content" exact />
+          <Route component={dashboard} path="/dashboard" />
+          <Route component={Report} path="/Report" />
+        </Switch>
+        {/* <Content /> */}
+        <test/>
+        <Footer />
+      </Router>
     </div>
   );
 }
