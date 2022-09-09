@@ -20,6 +20,7 @@ function App() {
           <Route component={Content} path="/Content" exact />
           <Route component={dashboard} path="/dashboard" />
           <Route component={Report} path="/Report" />
+          <Route component={test} path="/test" />
         </Switch>
         {/* <Content /> */}
         <test/>
